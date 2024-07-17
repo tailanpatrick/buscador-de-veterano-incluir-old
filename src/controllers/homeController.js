@@ -2,7 +2,7 @@ exports.paginaInicial = (req, res, next) => {
     const auth = false;
 
     res.render('index', {
-        titulo: 'Este será o título da página',
+        titulo: 'Buscador de Veterano Incluir',
         auth: auth
     });
 
