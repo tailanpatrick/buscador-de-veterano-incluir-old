@@ -1,18 +1,19 @@
 exports.middlewareGlobal  = (req, res, next) => {
-    res.locals.umaVariavelLocal = 'Este é o valor da variavel local'
+    res.locals.errors = req.flash('errors');
+    res.locals.success = req.flash('success');
     next();
 }
 
-// middleware que verifica erros de csrf
-exports.checkCsrfError =  (err, req, res, next) => {
-    if(err && err.code === 'EBADCSRFTOKEN'){
-        return res.render('includes/error', {
-            code: err.statusCode
-        })
-    }
-};
-
 exports.csrfMidddleware = (req, res, next) => {
     res.locals.csrfToken = req.csrfToken();
+    next();
+}
+
+
+exports.check404 = (req, res, next) => {
+    res.status(404).render('error', {
+        errorMessage: 'A página solicitada não existe',
+        errorCode: 404
+    });
     next();
 }
