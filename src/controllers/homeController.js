@@ -7,9 +7,3 @@ exports.paginaInicial = (req, res, next) => {
     });
 
 }
-
-exports.trataPost = (req, res, next) => {
-    const { enrollment } = req.body;
-    console.log(enrollment);
-    res.send(enrollment)
-}

@@ -1,11 +1,14 @@
 const express = require('express')
 const homeController = require('./src/controllers/homeController');
+const buscarController = require('./src/controllers/buscarController');
 
 const route = express.Router();
 
-// Rotas da home
+// Rota da home
 route.get('/', homeController.paginaInicial);
-route.post('/', homeController.trataPost);
+
+// Rota buscar
+route.get('/buscar', buscarController.buscar);
 
 
 

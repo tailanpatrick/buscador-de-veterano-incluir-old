@@ -1,0 +1,3 @@
+exports.buscar = (req, res) => {
+    
+}
