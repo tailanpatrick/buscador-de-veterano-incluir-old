@@ -5,7 +5,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const helmet = require('helmet');
 const csrf = require('csurf');
-const { middlewareGlobal, checkCsrfError, csrfMidddleware } = require('./src/middlewares/middleware');
+const { middlewareGlobal, csrfMidddleware, check404 } = require('./src/middlewares/middleware');
 const routes = require('./routes');
 
 const app = express();
@@ -39,9 +39,10 @@ app.use(routes);
 // Middleware global
 app.use(middlewareGlobal);
 
+app.use(check404);
+
 // Adicionar middleware de CSRF
 app.use(csrf());
-app.use(checkCsrfError);
 app.use(csrfMidddleware);
 
 
