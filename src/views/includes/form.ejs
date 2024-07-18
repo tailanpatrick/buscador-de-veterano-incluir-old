@@ -32,17 +32,12 @@
     <% if (typeof resultado !== 'undefined') { %>
       <% if (resultado) { %> bg-green-500 flex <% } else { %> bg-red-500 flex <% } %>
     <% } else { %> hidden <% } %>
-<<<<<<< HEAD
+
     justify-center items-center text-center max-w-[320px] h-20 rounded-lg text-white font-bold p-5">
   
     <% if (typeof name !== 'undefined' && name) { %>
       <%= name %> <br> CPF: <%= cpf %> <br>
-=======
-    justify-center items-center text-center max-w-[320px] h-20 rounded-lg text-white font-bold p-10">
   
-    <% if (typeof nome !== 'undefined' && nome) { %>
-      A pessoa: <%= nome %> <br> CPF: <%= cpf %> <br>
->>>>>>> 4d38b7b85f0c362e06ec410d670746183c9f2c5b
       <% if (typeof resultado !== 'undefined') { %>
         <% if (resultado) { %> É veterano <% } else { %> Não é veterano <% } %>
       <% } %>
