@@ -22,6 +22,7 @@
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "helmet": "^7.1.0",
+    "pg": "^8.12.0",
     "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
