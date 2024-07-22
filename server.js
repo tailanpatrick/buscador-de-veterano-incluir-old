@@ -9,7 +9,7 @@ const { middlewareGlobal, csrfMidddleware, check404 } = require('./src/middlewar
 const routes = require('./routes');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3333;
 
 // Middleware para parsing do corpo da requisição
 app.use(express.urlencoded({ extended: true }));
