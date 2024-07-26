@@ -4,15 +4,14 @@ const { maskCpf } = require('../helpers/format');
 exports.buscar = async (req, res) => {
     const { cpf } = req.query
 
-    const numCPF = cpf.replace(/\D/g, '');
 
     try {
 
-        const student = await Student.findByCpf(numCPF);
+        const student = await Student.findByCpf(cpf);
         
         if (!student) {
             return res.render('index', {
-                cpf: maskCpf(cpf),
+                cpf: cpf,
                 name: '',
                 resultado: !!student
             }); 
@@ -20,8 +19,8 @@ exports.buscar = async (req, res) => {
         }
 
         return res.render('index', {
-            cpf: maskCpf(student.cpf),
-            name: student.nome,
+            cpf: student.cpf,
+            name: student.nomeCompleto,
             resultado: !!student
         }); 
 
